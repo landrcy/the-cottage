@@ -2,9 +2,9 @@ THE COTTAGE — CREDITS
 
 All art is drawn procedurally in code (no AI imagery). All audio is real recorded sound under free licenses; nothing is synthesized or generated.
 
-MUSIC
-  wintery.mp3   — "Wintery loop" by Emma_MA. CC0 1.0 (public domain). https://opengameart.org/content/wintery-loop
-  vaporware.mp3 — "Calm Piano 1 (Vaporware)" by cynicmusic. CC0 1.0 (public domain). https://opengameart.org/content/calm-piano-1-vaporware
+MUSIC (calm, non-festive solo piano; loudness-normalized to -20 LUFS and re-encoded as MP3; played quietly)
+  jrpgpiano.mp3 — "JRPG Piano" by Joth. CC0 1.0 (public domain). https://opengameart.org/content/jrpg-piano
+  softpiano.mp3 — "Soft Piano Emotional 1" by Tozan. CC0 1.0 (public domain). https://opengameart.org/content/soft-piano-emotional-1
 
 FONTS
   Sacramento by Astigmatic (Brian J. Bonislawsky). SIL Open Font License 1.1 — assets/fonts/OFL.txt. https://fonts.google.com/specimen/Sacramento
@@ -76,4 +76,4 @@ SOUND EFFECTS (assets/sfx/<name>.ogg + <name>.mp3; trimmed, normalized and re-en
 
   sfx-data.js — the same .ogg files base64-embedded so sound works from file://.
 
-Thank you to Joseph Sardin (BigSoundBank), Kenney, Emma_MA and cynicmusic for giving their work to the public domain.
+Thank you to Joseph Sardin (BigSoundBank), Kenney, Joth and Tozan for giving their work to the public domain.
