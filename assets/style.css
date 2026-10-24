@@ -1,0 +1,33 @@
+/* The Cottage — palette: ink #140c08, wood #5e3522, amber #ffb347, cream #fff3dc, snow #d3e0ee */
+@font-face { font-family: 'VT323'; src: url(fonts/VT323-Regular.ttf) format('truetype'); font-display: swap; }
+@font-face { font-family: 'Sacramento'; src: url(fonts/Sacramento-Regular.ttf) format('truetype'); font-display: block; }
+:root { --S: 4; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: #140c08; overflow: hidden; overscroll-behavior: none; touch-action: none; }
+body { font-family: 'VT323', ui-monospace, monospace; color: #fff3dc; -webkit-font-smoothing: none; user-select: none; -webkit-user-select: none; }
+.sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+canvas { image-rendering: pixelated; image-rendering: crisp-edges; image-rendering: pixelated; }
+#game { position: fixed; left: 0; top: 0; display: block; z-index: 0; background: #140c08; touch-action: none; }
+#ui { position: fixed; top: calc(2px * var(--S) + env(safe-area-inset-top)); right: calc(2px * var(--S) + env(safe-area-inset-right)); display: flex; gap: calc(2px * var(--S)); z-index: 3; }
+#ui.left { right: auto; }
+.pbtn { appearance: none; border: 0; padding: 0; margin: 0; background: none; cursor: pointer; width: calc(13px * var(--S)); height: calc(13px * var(--S)); line-height: 0; }
+.pbtn[hidden] { display: none; }
+.pbtn canvas { width: 100%; height: 100%; display: block; }
+.pbtn:hover canvas, .pbtn:focus-visible canvas { filter: brightness(1.25); }
+.pbtn:focus-visible { outline: calc(1px * var(--S)) solid #ffb347; outline-offset: 0; }
+#lbtns { position: fixed; top: calc(2px * var(--S) + env(safe-area-inset-top)); left: calc(2px * var(--S) + env(safe-area-inset-left)); display: flex; gap: calc(2px * var(--S)); z-index: 3; }
+/* script title (Sacramento, OFL) — crisp cream with a soft dark halo for contrast */
+#script { position: fixed; left: 0; right: 0; text-align: center; z-index: 2; pointer-events: none; font-family: 'Sacramento', cursive; color: #fff6e6; line-height: 1; white-space: nowrap;
+  text-shadow: 0 0 calc(2px * var(--S)) rgba(20, 12, 8, .85), 0 calc(.5px * var(--S)) 0 rgba(20, 12, 8, .9); opacity: 0; transition: opacity .8s; -webkit-font-smoothing: antialiased; }
+#script.on { opacity: 1; }
+#label { position: fixed; left: 50%; transform: translateX(-50%); z-index: 2; pointer-events: none; font: calc(10px * var(--S))/1 'VT323', monospace; color: #ffffff; letter-spacing: .04em; text-transform: lowercase; white-space: nowrap;
+  text-shadow: calc(.5px * var(--S)) calc(.5px * var(--S)) 0 #140c08, calc(-.5px * var(--S)) calc(.5px * var(--S)) 0 #140c08, calc(.5px * var(--S)) calc(-.5px * var(--S)) 0 #140c08, calc(-.5px * var(--S)) calc(-.5px * var(--S)) 0 #140c08; opacity: 0; transition: opacity .35s; }
+#label.on { opacity: 1; }
+/* tooltips */
+#tip { position: fixed; left: 0; top: 0; z-index: 10; pointer-events: none; width: max-content; max-width: min(280px, calc(100vw - 12px)); padding: 4px 9px 6px; background: #1e120b; color: #ffffff;
+  border: 2px solid #fff3dc; box-shadow: 0 0 0 2px #140c08, 4px 4px 0 2px #140c08; font: 20px/1.05 'VT323', ui-monospace, monospace; text-align: left; }
+#tip[hidden] { display: none; }
+#tip b { display: block; font-weight: normal; font-size: 23px; color: #ffffff; text-transform: lowercase; border-bottom: 2px solid #5e3522; padding-bottom: 2px; margin-bottom: 3px; }
+#tip p { margin: 2px 0 0; color: #fff3dc; }
+#tip .nt { color: #ffd38a; font-size: 18px; }
+#script.ink { color: #3a2414; text-shadow: none; filter: none; }
