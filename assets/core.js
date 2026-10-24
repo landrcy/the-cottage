@@ -46,7 +46,7 @@
   C.mix = function (u, v, t) { var a = C.unpack(u), b = C.unpack(v); return C.pack(Math.round(a[0] + (b[0] - a[0]) * t), Math.round(a[1] + (b[1] - a[1]) * t), Math.round(a[2] + (b[2] - a[2]) * t), a[3]); };
   C.ramp = function (hexes) { return hexes.map(C.P); };
   /* pick a ramp entry for value v (0..1) with ordered dithering between neighbours */
-  C.rp = function (ramp, v, x, y) { var n = ramp.length - 1, f = C.clamp(v, 0, 1) * n, i = Math.floor(f), fr = f - i; if (fr > C.bayer(x, y)) i++; return ramp[C.clamp(i, 0, n)]; };
+  C.rp = function (ramp, v, x, y) { var n = ramp.length - 1, f = C.clamp(v, 0, 1) * n, i = Math.floor(f), fr = f - i; fr = fr < .3 ? 0 : fr > .7 ? 1 : (fr - .3) * 2.5; if (fr > C.bayer(x, y)) i++; /* clean bands, dither only at the seams */ return ramp[C.clamp(i, 0, n)]; };
 
   /* ---------- dither dissolve ---------- */
   var dpat = {};

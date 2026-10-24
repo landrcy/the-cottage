@@ -74,6 +74,9 @@
       var fl = .55 + .2 * Math.sin(t * 7.1) * Math.sin(t * 3.3 + 1) + K.poke * .3, lv = Math.round(fl * 6) / 6;
       RM.glow(g, L.box.x + L.box.w / 2, L.box.y + L.box.h - 6, 70, '#ffb347', lv * .45, 48);
       RM.glow(g, L.lamp.x + 5, L.lamp.y + 8, 30, '#ffd38a', .4);
+      /* lanterns + twinkling string lights on the mantel */
+      (L.lanterns || []).forEach(function (ln, i) { RM.glow(g, ln[0] + 4, ln[1] - 7, 14, '#ffc860', .55 + .1 * Math.round(Math.sin(t * 5 + i * 2)), 12); g.fillStyle = Math.sin(t * 11 + i) > .3 ? '#fff6d0' : '#ffd070'; g.fillRect(ln[0] + 3, ln[1] - 8, 3, 3); });
+      var BC = ['#ffd27a', '#ffe8b0', '#ffb84a', '#fff4d8']; (L.bulbs || []).forEach(function (b, i) { var on = Math.sin(t * (1.3 + (i % 5) * .37) + i * 2.1); g.fillStyle = on > -.4 ? BC[i % 4] : '#8a5a2a'; g.fillRect(b[0], b[1], 1, 1); if (on > .6) { g.fillStyle = 'rgba(255,214,130,.45)'; g.fillRect(b[0] - 1, b[1], 1, 1); g.fillRect(b[0] + 1, b[1], 1, 1); g.fillRect(b[0], b[1] + 1, 1, 1); } });
       K.sparks.forEach(function (s) { g.fillStyle = s.a < .5 ? '#fff0a0' : '#ff8a2a'; g.fillRect(Math.round(s.x), Math.round(s.y), 1, 1); });
       /* lamp flame */
       g.fillStyle = Math.sin(t * 9) > 0 ? '#fff6c8' : '#ffcf6a'; g.fillRect(L.lamp.x + 4, L.lamp.y + 8, 2, 3);

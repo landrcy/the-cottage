@@ -10,7 +10,7 @@
   /* build sprite pair from a spec */
   function build(o, s) {
     var w = o.w(s), h = o.h(s), m = o.mask(s, w, h);
-    var skin = A.dome(w, h, m, { ramp: o.ramp, R: o.Rr ? o.Rr(s) : null, tex: o.tex, spec: o.spec, outline: OUT, amb: o.amb, col: o.col });
+    var skin = A.dome(w, h, m, { ramp: o.ramp, R: o.Rr ? o.Rr(s) : null, tex: o.tex, pat: o.pat || function (x, y) { return (x * 5 + y * 3) % 13 === 0 ? 1 : 0; }, spec: o.spec, outline: OUT, amb: o.amb, col: o.col });
     if (o.deco) o.deco(skin, s, w, h);
     var flesh = o.flesh ? A.dome(w, h, o.fmask ? o.fmask(s, w, h) : m, { ramp: o.flesh, R: Math.max(2, Math.min(w, h) / 2.5), tex: o.ftex || gr(9), col: o.fcol ? function (x, y, v, d) { return o.fcol(x, y, v, d, w, h); } : null, outline: OUT, amb: .5 }) : null;
     return { skin: skin, flesh: flesh, w: w, h: h };
@@ -106,7 +106,7 @@
   T.pin = A.dome(48, 8, A.or(A.rrect(0, 2, 8, 4, 2), A.rrect(8, 0, 32, 8, 3), A.rrect(40, 2, 8, 4, 2)), { ramp: pal.woodL, R: 3, outline: OUT, tex: function (x) { return Math.sin(x * .7) * .3; } });
   T.brush = A.fromFn(10, 22, function (x, y) { if (y < 12) return Math.abs(x - 4.5) < 1.2 ? P(y % 4 ? '#8a5a32' : '#6a3e22') : 0; if (y < 14) return x > 1 && x < 8 ? P('#adb5bc') : 0; return x > 0 && x < 9 && y < 21 - (x === 1 || x === 8 ? 1 : 0) ? P(x % 2 ? '#e8c890' : '#c8a060') : 0; }).outline(OUT);
   T.spoon = A.fromFn(10, 30, function (x, y) { if (y < 20) return Math.abs(x - 4.5) < 1.1 ? P(y % 5 ? '#ae7744' : '#7a4a2c') : 0; var dx = (x - 4.5) / 4, dy = (y - 24.5) / 5; return dx * dx + dy * dy <= 1 ? P(dx < -.2 || dy < -.4 ? '#c99356' : '#966139') : 0; }).outline(OUT);
-  T.mitt = A.dome(18, 20, A.or(A.ell(9, 9, 7, 8), A.ell(3, 10, 2.6, 4), A.rrect(3, 14, 12, 6, 1)), { ramp: R(['#4a0e14', '#7a1a22', '#a82a30', '#d04a48', '#ec7a70']), outline: OUT, tex: function (x, y) { return ((x >> 1) + (y >> 1)) % 2 ? .5 : -.5; }, col: function (x, y) { return y >= 16 ? ((x + y) % 2 ? P('#f4ead2') : P('#d8c8a8')) : 0; } });
+  T.mitt = A.dome(18, 20, A.or(A.ell(9, 9, 7, 8), A.ell(3, 10, 2.6, 4), A.rrect(3, 14, 12, 6, 1)), { ramp: R(['#4a0e14', '#7a1a22', '#a82a30', '#d04a48', '#ec7a70']), outline: OUT, pat: A.tex.knit, tex: function (x, y) { return ((x >> 1) + (y >> 1)) % 2 ? .5 : -.5; }, col: function (x, y) { return y >= 16 ? ((x + y) % 2 ? P('#f4ead2') : P('#d8c8a8')) : 0; } });
   T.cutter = A.fromFn(16, 18, function (x, y) { var g = gman(x - 1, y - 1, 14, 16), e = gman(x, y, 16, 18, 1); return e && !g ? P('#adb5bc') : 0; }).outline(OUT);
   T.bag = A.dome(16, 22, A.or(function (x, y) { return y >= 2 && Math.abs(x + .5 - 8) < (22 - y) * .33; }), { ramp: R(['#a8a49c', '#d8d4cc', '#f4f2ee', '#ffffff']), outline: OUT, amb: .5 });
   T.shakerS = F.sprite('salt').skin; T.shakerP = F.sprite('pepper').skin;

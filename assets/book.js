@@ -53,7 +53,7 @@
     /* table + candle glow */
     RM.glow(g, Lb.x + Lb.w / 2, Lb.y + Lb.h / 2, Math.round(Lb.w * .7), '#ffcf7a', .25 + .03 * Math.sin(t * 5), Math.round(Lb.h * .7));
     /* leather cover behind the pages */
-    RM.rect(g, Lb.x - 6, Lb.y - 5, Lb.w + 12, Lb.h + 12, function (x, y, xx, yy) { var e = xx === 0 || yy === 0 || xx === Lb.w + 11 || yy === Lb.h + 11; if (e) return OUT; var gold = (xx === 3 || yy === 3 || xx === Lb.w + 8 || yy === Lb.h + 8); return gold ? P('#a8783a') : C.rp(pal.leather, .45 + A.noise(71, 3)(x, y) * .25 + (C.hash(x, y, 7) - .5) * .2, x, y); });
+    RM.rect(g, Lb.x - 6, Lb.y - 5, Lb.w + 12, Lb.h + 12, function (x, y, xx, yy) { var e = xx === 0 || yy === 0 || xx === Lb.w + 11 || yy === Lb.h + 11; if (e) return OUT; var gold = (xx === 3 || yy === 3 || xx === Lb.w + 8 || yy === Lb.h + 8); return gold ? P('#a8783a') : C.rp(pal.leather, .5 + A.noise(71, 9)(x, y) * .12 + A.tex.skin(x, y) * .17 + (C.hash(x >> 3, y >> 4, 72) > .8 ? A.tex.ridge(x, y, 5) * .17 : 0) - (xx < 6 || yy < 6 ? .1 : 0), x, y); });
     /* page stack edges */
     for (var k = 0; k < 3; k++) RM.rect(g, Lb.x - 2 + k, Lb.y + Lb.h + 2 - k, Lb.w + 4 - k * 2, 1, function (x) { return x % 3 ? P('#d3b781') : P('#b4935f'); });
     if (Lb.por) { drawPage(g, rec, Lb.x, Lb.y, Lb.w, Lb.h, 'B'); }

@@ -11,14 +11,14 @@
   K.lay = function () { var W = C.W, H = C.H, por = C.portrait; var top = por ? Math.round(H * .34) : Math.round(H * .4); return { W: W, H: H, por: por, top: top, cx: Math.round(W / 2), cy: por ? Math.round(H * .6) : Math.round(H * .66) }; };
   function bakeBg(L) {
     var W = L.W, H = L.H, c = C.mk(W, H), g = c.g, PL = R(['#5a3a26', '#7a5236', '#9a6c48', '#b8885c', '#d0a470']), TILE = R(['#3a4f80', '#5a72a8', '#c8d4e8', '#eef2f8', '#ffffff']);
-    RM.rect(g, 0, 0, W, L.top, function (x, y) { return C.rp(PL, .55 + A.noise(7, 6)(x, y) * .15 + (C.hash(x, y, 3) - .5) * .12 - y / L.top * .2, x, y); });
+    RM.rect(g, 0, 0, W, L.top, function (x, y) { return C.rp(PL, .5 + Math.round(A.noise(7, 8)(x, y) * 2) * .1 - y / L.top * .2, x, y); });
     /* delft tile backsplash */
     var ty0 = L.top - 34; RM.rect(g, 0, ty0, W, 34, function (x, y, xx, yy) { var tx = xx % 17, tyy = yy % 17, tile = Math.floor(xx / 17) + Math.floor(yy / 17) * 7; if (tx === 0 || tyy === 0) return P('#8a8478'); var dx = tx - 8.5, dy = tyy - 8.5, d = Math.abs(dx) + Math.abs(dy); var k = tile % 3; var motif = k === 0 ? (d > 4.5 && d < 6) || (d < 1.6) : k === 1 ? Math.abs(Math.abs(dx) - Math.abs(dy)) < .8 && d < 6 : (dx * dx + dy * dy < 9 && dx * dx + dy * dy > 4) || (Math.abs(dx) < .6 && dy > 2); if (motif) return TILE[1]; if ((tx < 2 || tyy < 2) && C.bayer(x, y) < .5) return TILE[4]; return C.rp(TILE, .72 + (C.hash(tile, 0, 1) - .5) * .1, x, y); });
     /* utensil rail with hanging spoons/whisk */
     RM.rect(g, 10, ty0 - 16, W - 20, 2, function (x, y, xx, yy) { return C.rp(pal.copper, yy ? .3 : .8, x, y); });
     for (var u = 0; u < Math.floor((W - 30) / 28); u++) { var ux = 22 + u * 28; for (var k = 0; k < 4; k++) RM.px(g, ux, ty0 - 14 + k, '#5a3a26'); var sp = u % 2 ? C.food.tools.spoon : C.food.tools.brush; g.drawImage(sp.canvas(), ux - (sp.w >> 1), ty0 - 10); }
     /* worktop planks */
-    RM.rect(g, 0, L.top, W, H - L.top, function (x, y, xx, yy) { var row = Math.floor(yy / 12), seam = yy % 12 === 11 || yy === 0; var v = .5 + A.noise(row * 3, 4)(x * .25, y * 1.5) * .3 + (C.hash(x, y, 9) - .5) * .12 + (yy < 3 ? .3 : 0) - yy / (H - L.top) * .25; return C.rp(pal.woodL, seam ? .1 : v, x, y); });
+    RM.rect(g, 0, L.top, W, H - L.top, function (x, y, xx, yy) { var row = Math.floor(yy / 12), seam = yy % 12 === 11 || yy === 0; var v = .5 + A.noise(row * 3, 9)(x * .2, y * .5) * .12 + A.tex.wood(x + row * 57, yy % 12, row + 40) * .2 + (yy < 3 ? .3 : 0) - yy / (H - L.top) * .25; return C.rp(pal.woodL, seam ? .1 : v, x, y); });
     for (var i = 0; i < 70; i++) RM.px(g, (C.hash(i, 1, 3) * W) | 0, L.top + 4 + ((C.hash(i, 2, 3) * (H - L.top - 6)) | 0), C.hash(i, 3, 3) > .5 ? '#f4ecdc' : '#e8dcc4');
     return c;
   }

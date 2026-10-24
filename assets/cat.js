@@ -9,7 +9,7 @@
   function tabby(x, y) { return Math.sin(x * 1.25 + y * .35) > .45 ? -2.2 : 0; }
   function mk(key, w, h, parts, belly, deco) {
     if (cache[key]) return cache[key];
-    var p = A.dome(w, h, A.or.apply(null, parts), { ramp: FUR, R: 4, outline: OUT, amb: .25, tex: tabby, col: function (x, y, v) { return belly && belly(x, y) ? C.rp(CREAM, v, x, y) : 0; } });
+    var p = A.dome(w, h, A.or.apply(null, parts), { ramp: FUR, R: 4, outline: OUT, amb: .25, tex: tabby, pat: function (x, y) { return A.tex.fur(x, y); }, col: function (x, y, v) { return belly && belly(x, y) ? C.rp(CREAM, v, x, y) : 0; } });
     if (deco) deco(p); return (cache[key] = p);
   }
   function ear(cx, by, s) { return function (x, y) { var t = (by - y) / 4; return t >= 0 && t <= 1 && Math.abs(x + .5 - cx) <= (1 - t) * 2.2 * (s || 1); }; }

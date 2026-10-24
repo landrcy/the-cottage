@@ -9,7 +9,7 @@
   ST.inR = inR;
   function sndOf(id) { var s = (F.ing[id] || {}).snd; if (s === 'crunch') C.sfx.any('crunch', 2); else if (s === 'slice') C.sfx.any('slice', 2); else C.sfx.any('chop', 3, { jitter: .15 }); }
   /* wicker basket */
-  var BASKET = A.dome(56, 26, A.or(A.and(A.ell(28, 6, 27, 22), function (x, y) { return y >= 6; }), A.ell(28, 6, 27, 5)), { ramp: R(['#3a220e', '#6a4420', '#9a6a34', '#c4924a', '#e0b46a']), outline: OUT, R: 4, tex: function (x, y) { return ((x + (y >> 1) * 2) % 4 < 2 ? .6 : -.6) + (y % 3 === 0 ? -.8 : 0); }, col: function (x, y) { var dx = (x + .5 - 28) / 24, dy = (y + .5 - 6) / 3.6; return dx * dx + dy * dy < 1 ? P('#2a1608') : 0; } });
+  var BASKET = A.dome(56, 26, A.or(A.and(A.ell(28, 6, 27, 22), function (x, y) { return y >= 6; }), A.ell(28, 6, 27, 5)), { ramp: R(['#3a220e', '#6a4420', '#9a6a34', '#c4924a', '#e0b46a']), outline: OUT, R: 4, pat: function (x, y) { return A.tex.ridge(x, y, 3); }, tex: function (x, y) { return ((x + (y >> 1) * 2) % 4 < 2 ? .6 : -.6) + (y % 3 === 0 ? -.8 : 0); }, col: function (x, y) { var dx = (x + .5 - 28) / 24, dy = (y + .5 - 6) / 3.6; return dx * dx + dy * dy < 1 ? P('#2a1608') : 0; } });
   var COLD = { butter: 1, milk: 1, cream: 1, egg: 1, beef: 1, turkey: 1, ham: 1 };
   /* ================= gather ================= */
   ST.gather = function (cfg, K) {

@@ -58,6 +58,7 @@
       var v = amb + (1 - amb) * Math.max(0, nx * L[0] + ny * L[1] + nz * L[2]);
       if (o.flat) v = C.lerp(v, o.flat, .5);
       if (o.tex) v += o.tex(x, y) * .14;
+      if (o.pat) { var st = o.pat(x, y, d[i]); if (st) v += st * (1 / (ramp.length - 1)) * Math.max(.35, 1 - Math.abs(v - .55) * 1.3); } /* one shade step, softer in darks/brights */
       var c = o.col ? o.col(x, y, v, d[i]) : 0;
       if (!c) c = C.rp(ramp, v, x, y);
       if (o.spec && v > .97 && d[i] > 1.5) c = o.spec;
@@ -75,6 +76,27 @@
   A.noise = function (s, sc) { sc = sc || 1; return function (x, y) { var X = x / sc, Y = y / sc, xi = Math.floor(X), yi = Math.floor(Y), fx = X - xi, fy = Y - yi; fx = fx * fx * (3 - 2 * fx); fy = fy * fy * (3 - 2 * fy);
     var a = C.hash(xi, yi, s), b = C.hash(xi + 1, yi, s), c = C.hash(xi, yi + 1, s), d = C.hash(xi + 1, yi + 1, s); return (a + (b - a) * fx + (c - a) * fy + (a - b - c + d) * fx * fy) * 2 - 1; }; };
   A.grain = function (s) { return function (x, y) { return C.hash(x, y, s) * 2 - 1; }; };
+
+
+  /* ---------- texture patterns (guides: ridges + two-colour, no dither noise) — each returns -1 / 0 / +1 shade steps ---------- */
+  A.tex = {
+    /* wood grain: long wavy lines one shade down, a highlight line beside, rare knots */
+    wood: function (x, y, s) { var n = A.noise(s || 1, 9)(x * .35, y * 1.6) * 1.5 + y * .32, f = n - Math.floor(n);
+      var kx = Math.floor(x / 23), kn = C.hash(kx, Math.floor(y / 6), s + 9) > .93; if (kn) { var dx = x - kx * 23 - 11, dy = (y % 6) - 3; if (dx * dx * .3 + dy * dy < 3) return -1; }
+      return f < .1 ? -1 : f < .19 ? 1 : 0; },
+    /* ridges (fabric folds / leather creases): slanted lines brighter, the line under darker */
+    ridge: function (x, y, p) { p = p || 4; var k = ((x + y * 2) % (p * 2) + p * 2) % (p * 2); return k === 0 ? 1 : k === 1 ? -1 : 0; },
+    /* knit: columns of V stitches, light on the stitch, dark in the gap */
+    knit: function (x, y) { var c = ((x % 4) + 4) % 4, r = ((y % 3) + 3) % 3; if (c === 3) return -1; return (c === 0 && r === 0) || (c === 2 && r === 0) || (c === 1 && r === 1) ? 1 : 0; },
+    /* fur: short strokes, two tones */
+    fur: function (x, y, s) { var k = (x * 3 + Math.floor(y / 3) * 5 + (s || 0)) % 7; return k === 0 ? 1 : k === 4 && y % 3 === 2 ? -1 : 0; },
+    /* feathers: scalloped rows, dark lower rim, light top */
+    feather: function (x, y) { var r = Math.floor(y / 3), xx = ((x + (r % 2) * 2) % 4 + 4) % 4, yy = y % 3; return yy === 2 && xx !== 0 ? -1 : yy === 0 && xx === 2 ? 1 : 0; },
+    /* crust: little rounded bumps, highlight top-left, shadow bottom-right */
+    crust: function (x, y, s) { var gx = Math.floor(x / 3), gy = Math.floor(y / 3), h = C.hash(gx, gy, s || 4); if (h < .45) return 0; var xx = x % 3, yy = y % 3; return xx === 0 && yy === 0 ? 1 : xx === 2 && yy === 2 ? -1 : 0; },
+    /* pebbled roast skin */
+    skin: function (x, y) { var k = (x * 5 + y * 7) % 11; return k === 0 ? 1 : k === 6 ? -1 : 0; }
+  };
 
   /* ---------- shared palettes ---------- */
   A.pal = {
