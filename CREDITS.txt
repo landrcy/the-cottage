@@ -1,0 +1,79 @@
+THE COTTAGE — CREDITS
+
+All art is drawn procedurally in code (no AI imagery). All audio is real recorded sound under free licenses; nothing is synthesized or generated.
+
+MUSIC
+  wintery.mp3   — "Wintery loop" by Emma_MA. CC0 1.0 (public domain). https://opengameart.org/content/wintery-loop
+  vaporware.mp3 — "Calm Piano 1 (Vaporware)" by cynicmusic. CC0 1.0 (public domain). https://opengameart.org/content/calm-piano-1-vaporware
+
+FONTS
+  Sacramento by Astigmatic (Brian J. Bonislawsky). SIL Open Font License 1.1 — assets/fonts/OFL.txt. https://fonts.google.com/specimen/Sacramento
+  VT323 by Peter Hull. SIL Open Font License 1.1 — assets/fonts/OFL-VT323.txt. https://fonts.google.com/specimen/VT323
+
+SOUND EFFECTS (assets/sfx/<name>.ogg + <name>.mp3; trimmed, normalized and re-encoded)
+
+  chop1.ogg / chop1.mp3 — BigSoundBank #2068 "Cutting board, zucchini #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2068.html
+  chop2.ogg / chop2.mp3 — BigSoundBank #2068 "Cutting board, zucchini #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2068.html
+  chop3.ogg / chop3.mp3 — BigSoundBank #2068 "Cutting board, zucchini #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2068.html
+  chop4.ogg / chop4.mp3 — Kenney "RPG Audio" (chop.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  slice1.ogg / slice1.mp3 — BigSoundBank #1598 "Raw carrot cut #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1598.html
+  slice2.ogg / slice2.mp3 — BigSoundBank #1598 "Raw carrot cut #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1598.html
+  knife.ogg / knife.mp3 — Kenney "RPG Audio" (knifeSlice.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  knife2.ogg / knife2.mp3 — Kenney "RPG Audio" (knifeSlice2.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  saw.ogg / saw.mp3 — BigSoundBank #1247 "Bread knife #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1247.html
+  crunch1.ogg / crunch1.mp3 — BigSoundBank #1594 "Raw carrot crunched #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1594.html
+  crunch2.ogg / crunch2.mp3 — BigSoundBank #1113 "Apple crunched #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1113.html
+  squish1.ogg / squish1.mp3 — BigSoundBank #0495 "Steps in the Mud" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0495.html
+  squish2.ogg / squish2.mp3 — BigSoundBank #0495 "Steps in the Mud" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0495.html
+  squish3.ogg / squish3.mp3 — BigSoundBank #0495 "Steps in the Mud" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0495.html
+  squish4.ogg / squish4.mp3 — BigSoundBank #2589 "Gore (pepper) #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2589.html
+  sizzle.ogg / sizzle.mp3 — BigSoundBank #0144 "Frying pan #2" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0144.html
+  fry.ogg / fry.mp3 — BigSoundBank #2508 "Frying bath #4" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2508.html
+  simmer.ogg / simmer.mp3 — BigSoundBank #0492 "Small Broth in a Pot" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0492.html
+  boil.ogg / boil.mp3 — BigSoundBank #0491 "Big broth in a pot" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0491.html
+  kettle.ogg / kettle.mp3 — BigSoundBank #1351 "Whistling kettle #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1351.html
+  fire.ogg / fire.mp3 — BigSoundBank #0031 "Fireplace #2" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0031.html
+  purr.ogg / purr.mp3 — BigSoundBank #1010 "Cat Purring #3" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1010.html
+  wind.ogg / wind.mp3 — BigSoundBank #0147 "Whistling of the Wind #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0147.html
+  pour.ogg / pour.mp3 — BigSoundBank #1155 "Hot water in mug #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1155.html
+  pourDry.ogg / pourDry.mp3 — BigSoundBank #2071 "Cereal in bowl #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2071.html
+  stir.ogg / stir.mp3 — BigSoundBank #0410 "Spoon into a Mug of Coffee" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0410.html
+  tick.ogg / tick.mp3 — BigSoundBank #0082 "Timer #2" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0082.html
+  clock.ogg / clock.mp3 — BigSoundBank #1567 "Grandfather clock, ticking" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1567.html
+  ding.ogg / ding.mp3 — BigSoundBank #1631 "Microwave Bell" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1631.html
+  bell.ogg / bell.mp3 — BigSoundBank #0479 "Counter bell #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0479.html
+  clink1.ogg / clink1.mp3 — BigSoundBank #0214 "Bottle on a table" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0214.html
+  clink2.ogg / clink2.mp3 — BigSoundBank #0214 "Bottle on a table" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0214.html
+  jar.ogg / jar.mp3 — Kenney "Impact Sounds" (impactGlass_light_002.ogg) — CC0 1.0. https://kenney.nl/assets/impact-sounds
+  glass.ogg / glass.mp3 — BigSoundBank #1204 "Glass, Placed on Table" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1204.html
+  plate.ogg / plate.mp3 — BigSoundBank #1189 "Large Plate, set on Table" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1189.html
+  spoon.ogg / spoon.mp3 — BigSoundBank #1196 "Teaspoon, handled on a plate" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1196.html
+  creak.ogg / creak.mp3 — BigSoundBank #0305 "Creaking closet door" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0305.html
+  creak2.ogg / creak2.mp3 — Kenney "RPG Audio" (creak1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  owl.ogg / owl.mp3 — BigSoundBank #1763 "Tawny Owl #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1763.html
+  chime.ogg / chime.mp3 — BigSoundBank #2687 "Cluster Chimes #1" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-2687.html
+  sleigh.ogg / sleigh.mp3 — BigSoundBank #1124 "Bells of Santa Claus #2" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-1124.html
+  shake.ogg / shake.mp3 — BigSoundBank #0197 "Small maraca (musical instrument)" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0197.html
+  hiss.ogg / hiss.mp3 — BigSoundBank #0202 "Water that burns" by Joseph Sardin — CC0 1.0. https://bigsoundbank.com/sound-0202.html
+  bookOpen.ogg / bookOpen.mp3 — Kenney "RPG Audio" (bookOpen.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  bookClose.ogg / bookClose.mp3 — Kenney "RPG Audio" (bookClose.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  flip1.ogg / flip1.mp3 — Kenney "RPG Audio" (bookFlip1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  flip2.ogg / flip2.mp3 — Kenney "RPG Audio" (bookFlip2.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  flip3.ogg / flip3.mp3 — Kenney "RPG Audio" (bookFlip3.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  pot.ogg / pot.mp3 — Kenney "RPG Audio" (metalPot1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  pot2.ogg / pot2.mp3 — Kenney "RPG Audio" (metalPot2.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  latch.ogg / latch.mp3 — Kenney "RPG Audio" (metalLatch.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  cloth.ogg / cloth.mp3 — Kenney "RPG Audio" (cloth1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  cloth2.ogg / cloth2.mp3 — Kenney "RPG Audio" (cloth3.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  grab.ogg / grab.mp3 — Kenney "RPG Audio" (handleSmallLeather.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  thump.ogg / thump.mp3 — Kenney "RPG Audio" (dropLeather.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  door.ogg / door.mp3 — Kenney "RPG Audio" (doorOpen_1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  doorClose.ogg / doorClose.mp3 — Kenney "RPG Audio" (doorClose_1.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  click.ogg / click.mp3 — Kenney "RPG Audio" (metalClick.ogg) — CC0 1.0. https://kenney.nl/assets/rpg-audio
+  wood.ogg / wood.mp3 — Kenney "Impact Sounds" (impactWood_light_002.ogg) — CC0 1.0. https://kenney.nl/assets/impact-sounds
+  plop.ogg / plop.mp3 — Kenney "Impact Sounds" (impactSoft_medium_000.ogg) — CC0 1.0. https://kenney.nl/assets/impact-sounds
+  step.ogg / step.mp3 — Kenney "Impact Sounds" (footstep_wood_001.ogg) — CC0 1.0. https://kenney.nl/assets/impact-sounds
+
+  sfx-data.js — the same .ogg files base64-embedded so sound works from file://.
+
+Thank you to Joseph Sardin (BigSoundBank), Kenney, Emma_MA and cynicmusic for giving their work to the public domain.
